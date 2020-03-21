@@ -1,0 +1,29 @@
+{% load resume_extras %}
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="certificates">
+    <div class="w-100">
+        <h2 class="mb-5">Certifications</h2>
+        <nav>
+            <div class="nav nav-tabs">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#web-development-certificates">Web Development</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#artificial-intelligence-certificates">Artificial Intelligence</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#basics-certificates">Basics</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#languages-certificates">Languages</a>
+            </div>
+        </nav>
+        <div class="tab-content mt-4">
+            <div class="tab-pane fade show active" id="web-development-certificates">
+                {% include 'resume/snipits/certificates_field.html' with id='1' %}
+            </div>
+            <div class="tab-pane fade" id="artificial-intelligence-certificates">
+                {% include 'resume/snipits/certificates_field.html' with id='2' %}
+            </div>
+            <div class="tab-pane fade" id="basics-certificates">
+                {% include 'resume/snipits/certificates_field.html' with id='3' %}
+            </div>
+            <div class="tab-pane fade" id="languages-certificates">
+                {% include 'resume/snipits/certificates_field.html' with id='4' %}
+            </div>
+        </div>
+    </div>
+</section>

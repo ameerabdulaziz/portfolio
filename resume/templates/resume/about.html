@@ -1,0 +1,20 @@
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+    <div class="w-100">
+        <h1>{{ first_name }} <span class="text-primary">{{ last_name }}</span></h1>
+        <div class="subheading mb-5">
+            <ul class="fa-ul mb-0">
+                <li><i class="fa-li fa fa-address-card text-primary"></i> {{ address }}</li>
+                <li><i class="fa-li fa fa-phone text-primary"></i> {{ phone }}</li>
+                <li><i class="fa-li fa fa-mail-bulk text-primary"></i> <a href="mailto:{{ email }}">{{ email }}</a></li>
+            </ul>
+        </div>
+        <p class="lead mb-5">{{ about }}</p>
+        <div class="social-icons">
+            {% for key, value in social.items %}
+                <a href="{{ value }}" target="_blank">
+                    <i class="fab fa-{{ key }}"></i>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

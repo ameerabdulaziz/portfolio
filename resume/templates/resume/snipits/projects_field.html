@@ -1,0 +1,33 @@
+{% load resume_extras %}
+
+{% with projects=projects|in_field:id %}
+    {% if projects %}
+        <div class="card-deck">
+            {% for project in projects %}
+                <div class="card">
+                    <a href="{{ project.preview_link }}" target="_blank">
+                        <img class="card-img-top" src="{{ project.image.url }}" alt="{{ project.title }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.detail|truncatewords:5 }}</p>
+                    </div>
+                    <div class="card-footer bg-primary">
+                        <small class="text-muted">
+                            <a href="{{ project.github_link }}" class="text-dark"><i class="fab fa-github"></i> GitHub</a>
+                        </small>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                <div class="resume-content">
+                    <h3 class="text-muted m-auto">
+                        There are no projects for this field yet!
+                    </h3>
+                </div>
+        </div>
+    {% endif %}
+
+{% endwith %}

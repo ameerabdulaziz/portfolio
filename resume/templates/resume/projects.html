@@ -1,0 +1,20 @@
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+    <div class="w-100">
+        <h2 class="mb-5">Projects</h2>
+        <nav>
+            <div class="nav nav-tabs" >
+                <a class="nav-item nav-link active" data-toggle="tab" href="#web-development-projects">Web Development</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#artificial-intelligence-projects">Artificial Intelligence</a>
+            </div>
+        </nav>
+        <div class="tab-content mt-4">
+            <div class="tab-pane fade show active" id="web-development-projects">
+                {% include 'resume/snipits/projects_field.html' with id='1' %}
+            </div>
+            <div class="tab-pane fade" id="artificial-intelligence-projects">
+                {% include 'resume/snipits/projects_field.html' with id='2' %}
+            </div>
+        </div>
+    </div>
+</section>
+

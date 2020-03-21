@@ -1,0 +1,26 @@
+{% load resume_extras %}
+
+{% with certificates=certificates|in_field:id %}
+    {% if certificates %}
+        {% for certificate in certificates %}
+            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                <div class="resume-content">
+                    <h4 class="text-capitalize mb-0"><i class="fa fa-award text-warning"></i>
+                        <a href="{{ certificate.link }}" target="_blank">{{ certificate.course }}</a></h4>
+                    <div class="subheading mb-0 font-weight-lighter">{{ certificate.university}}</div>
+                </div>
+                <div class="resume-date text-md-right">
+                    <span class="text-primary">{{ certificate.date }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+            <div class="resume-content">
+                <h3 class="text-muted m-auto">
+                    There are no certificates for this field yet!
+                </h3>
+            </div>
+        </div>
+    {% endif %}
+{% endwith %}
